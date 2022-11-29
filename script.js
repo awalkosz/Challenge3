@@ -9,15 +9,6 @@ var Symbls = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "
 var UprCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var LwrCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
-// Write password to the #password input
-function writePassword() {
-
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-}
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
@@ -38,6 +29,7 @@ function PasswordPrompts () {
 
   // created an object with keys to be able to return the values to the webpage in order to display popups
   var ConfirmObjects = { 
+    
     PswrdLengths: PswrdLengths,
     ConfirmNums: ConfirmNums,
     ConfirmSymbls: ConfirmSymbls,
@@ -52,7 +44,7 @@ function PasswordPrompts () {
 // Fetching random index and rounds down to equal integer to the correct length of the array
 function CreateRandom(length) {
 
-  var RndmNmbr = math.floor(math.random() * length);
+  var RndmNmbr = Math.floor(Math.random() * length);
   return RndmNmbr;
 
 }
@@ -69,7 +61,7 @@ function generatePassword() {
 // if statements created to combine strings together
 
   if (PswrdGenerate.ConfirmNums) {
-    CharSelect = CharSelect.concat(nums)
+    CharSelect = CharSelect.concat(Nums)
   } if (PswrdGenerate.ConfirmSymbls) {
     CharSelect = CharSelect.concat(Symbls)
   } if (PswrdGenerate.ConfirmUprCase) {
@@ -80,9 +72,22 @@ function generatePassword() {
 
 
   for (var i = 0; i < PswrdGenerate.PswrdLengths; i++) {
-    PswrdArray.push(CharSelect[createRandom(CharSelect.length)])
+    PswrdArray.push(CharSelect[CreateRandom(CharSelect.length)])
   }
 
   return PswrdArray.join("")
+  
+ 
+
+  
+}
+
+// Write password to the #password input
+function writePassword() {
+
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
 
 }
