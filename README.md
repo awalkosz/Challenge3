@@ -29,5 +29,5 @@ THEN the password is either displayed in an alert or written to the page
 
 ![Alt text](/Password%20generator.PNG?raw=true "Screenshot of Website")
 
-Deployed URL:
+Deployed URL: https://awalkosz.github.io/Challenge3/
 Link to Repo: https://github.com/awalkosz/Challenge3
